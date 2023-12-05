@@ -1,12 +1,19 @@
-<script setup>
-
-</script>
 
 <template>
-  
+  <div>
+    <SearchBar />
+    <MovieList />
+  </div>
 </template>
 
-<style scoped>
-}
+<script>
+import SearchBar from './components/SearchBar.vue';
+import MovieList from './components/MovieList.vue';
 
-</style>
+export default {
+  components: {
+    SearchBar,
+    MovieList,
+  },
+};
+</script>
