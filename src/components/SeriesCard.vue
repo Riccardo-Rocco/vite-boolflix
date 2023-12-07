@@ -1,12 +1,12 @@
 
 <template>
-    <div class="movie-card">
-      <h3>{{ movie.title }}</h3>
-      <p>Titolo Originale: {{ movie.original_title }}</p>
-      <div v-if="movie.original_language">
-        Lingua: <img :src="getFlagUrl(movie.original_language)" alt="Flag" />
+    <div class="series-card">
+      <h3>{{ series.name }}</h3>
+      <p>Titolo Originale: {{ series.original_name }}</p>
+      <div v-if="series.original_language">
+        Lingua: <img :src="getFlagUrl(series.original_language)" alt="Flag" />
       </div>
-      <p>Voto: <font-awesome-icon v-for="star in getStars(movie.vote_average)" :icon="['fas', 'star']" :key="star" /></p>
+      <p>Voto: <font-awesome-icon v-for="star in getStars(series.vote_average)" :icon="['fas', 'star']" :key="star" /></p>
     </div>
   </template>
   
@@ -22,7 +22,7 @@
       FontAwesomeIcon,
     },
     props: {
-      movie: Object,
+      series: Object,
     },
     methods: {
       getFlagUrl(language) {
@@ -45,8 +45,8 @@
   </script>
   
   <style scoped>
-  
-  .movie-card {
+ 
+  .series-card {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
@@ -54,7 +54,7 @@
     text-align: center;
   }
   
-  .movie-card img {
+  .series-card img {
     max-width: 30px;
     border: 2px solid black;
     border-radius: 4px;

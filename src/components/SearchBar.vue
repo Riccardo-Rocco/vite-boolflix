@@ -1,8 +1,8 @@
 
 <template>
     <div class="search-bar">
-      <input v-model="store.searchQuery" placeholder="Cerca film..." />
-      <button @click="searchMovies">Cerca</button>
+      <input v-model="store.searchQuery" placeholder="Cerca film o serie TV..." />
+      <button @click="searchAll">Cerca</button>
     </div>
   </template>
   
@@ -12,17 +12,17 @@
   
   export default {
     setup() {
-      const searchMovies = () => {
-        actions.fetchMovies();
+      const searchAll = async () => {
+        await actions.fetchMovies();
+        await actions.fetchTVShows();
       };
   
-      return { store, searchMovies };
+      return { store, searchAll };
     },
   };
   </script>
   
-  <style>
- 
+  <style scoped>
   .search-bar {
     display: flex;
     gap: 10px;
