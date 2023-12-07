@@ -1,11 +1,14 @@
-
 <template>
     <div>
       <h2>Risultati della Ricerca Film:</h2>
-      <MovieCard v-for="movie in store.movieList" :key="movie.id" :movie="movie" />
-      
+      <div class="card-container movie-container" ref="movieContainer">
+        <MovieCard v-for="movie in store.movieList" :key="movie.id" :movie="movie" />
+      </div>
+  
       <h2>Risultati della Ricerca Serie TV:</h2>
-      <SeriesCard v-for="series in store.tvShowList" :key="series.id" :series="series" />
+      <div class="card-container series-container" ref="seriesContainer">
+        <SeriesCard v-for="series in store.tvShowList" :key="series.id" :series="series" />
+      </div>
     </div>
   </template>
   
@@ -24,4 +27,14 @@
     },
   };
   </script>
+  
+  <style scoped>
+  .card-container {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    white-space: nowrap; 
+  }
+   
+  </style>
   
