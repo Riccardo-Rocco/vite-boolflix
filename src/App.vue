@@ -2,11 +2,9 @@
 <template>
   <div id="app">
     <header>
-    
       <SearchBar />
     </header>
     <main>
-     
       <MovieList />
     </main>
   </div>
@@ -24,11 +22,10 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style>
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #333;
+  margin: 0; 
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -37,7 +34,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #000000;
   color: white;
   padding: 10px;
   position: fixed;

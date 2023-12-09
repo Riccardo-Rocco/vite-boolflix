@@ -1,11 +1,11 @@
 <template>
     <div>
-      <h2>Risultati della Ricerca Film:</h2>
+      <h2 v-if="store.isSearchPerformed">Risultati della Ricerca Film:</h2>
       <div class="card-container movie-container" ref="movieContainer">
         <MovieCard v-for="movie in store.movieList" :key="movie.id" :movie="movie" />
       </div>
   
-      <h2>Risultati della Ricerca Serie TV:</h2>
+      <h2 v-if="store.isSearchPerformed">Risultati della Ricerca Serie TV:</h2>
       <div class="card-container series-container" ref="seriesContainer">
         <SeriesCard v-for="series in store.tvShowList" :key="series.id" :series="series" />
       </div>
@@ -35,6 +35,5 @@
     overflow-x: auto;
     white-space: nowrap; 
   }
-   
   </style>
   

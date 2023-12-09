@@ -1,13 +1,13 @@
-
 import { reactive } from 'vue';
 import axios from 'axios';
 
 export const store = reactive({
   movieList: [],
-  tvShowList: [], 
+  tvShowList: [],
   searchQuery: '',
   apiKey: '997ba6d7129486958f93083c69172965',
   baseURL: 'https://api.themoviedb.org/3',
+  isSearchPerformed: false,
 });
 
 export const actions = {
@@ -20,6 +20,7 @@ export const actions = {
         },
       });
       store.movieList = response.data.results;
+      store.isSearchPerformed = true;
     } catch (error) {
       console.error('Errore durante il recupero dei film:', error);
     }
@@ -34,6 +35,7 @@ export const actions = {
         },
       });
       store.tvShowList = response.data.results;
+      store.isSearchPerformed = true;
     } catch (error) {
       console.error('Errore durante il recupero delle serie TV:', error);
     }
